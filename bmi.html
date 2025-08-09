@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+
+fieldset{
+    background-color: aqua;
+    position:relative;
+    left:400px;
+    top:50px;
+    cursor: pointer;
+    border:5px solid black;
+    border-radius: 90px;
+    border-top-left-radius:5px ;
+    border-bottom-right-radius:5px ;
+    color:black;
+    width:650px;
+    height: auto;
+}
+
+input{
+    border:3px solid black;
+    border-radius: 60px;
+    font-size: 30px;
+    width:100px;
+    color:blue;
+
+}
+input:focus{
+    background-color:lightgreen;
+}
+div.div1{
+  border:3px solid black;
+  border-radius: 60px;
+  color:blue;
+  font-size: 30px;
+    padding: 5px;
+    font-size: 30px;
+ font-weight: bold;
+    padding-top: 10px;
+    align-items: center;
+    width:auto;
+    height: 30px;
+    background-color: rgb(0, 255, 38);
+  text-align: center;
+    justify-content: center;
+}
+div.div2{
+    border:3px solid black;
+    background-color: rgb(0, 255, 38);
+    border-radius: 60px;
+    color:blue;
+  font-size: 30px;
+  padding: 5px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 30px;
+  padding-top: 10px;
+  align-items: center;
+
+  width:auto;
+  height: 30px;
+  justify-content: center;
+}
+
+label{
+    color:red;
+    font-size: 30px;
+    font-weight:bold;
+    
+}
+button{
+    background-color: black;
+    border-radius: 60px;
+    width:150px;
+    height:50px;
+    font-size: 30px;
+    color:whitesmoke;
+}
+button:hover{
+    color:blue;
+    height:100px;
+}
+#hd{
+   position: relative;
+   left:400px;
+   font-size: 40px;
+   color:red;
+}
+#out{
+ padding: 3px;
+}
+body{
+    background-color: rgba(144, 238, 213, 0.987);
+    width:auto;
+    height: auto;
+}
+hr{
+    border: 5px solid black;
+}
+
+</style>
+</head>
+
+<body>
+<hr><h1 id="hd"> Calculate Your Body Mass Index(BMI)</h1><hr>
+<fieldset>
+
+    <label>
+        WEIGHT:
+        <input type="number" id="weight"  placeholder="kgs" onchange="fun()" >
+     </label>
+    <br>
+    <br>
+    <br>
+
+     <label>
+        HEIGHT:
+        <input type="number" id="height" placeholder="cms" onchange="fun()" >
+     </label>
+    
+    
+     <h1 id="h1"></h1>
+     <h1 id="h2"></h1>
+    
+     <button id="btn" >calculate</button>
+
+     <br>
+     <br>
+     <br>
+
+   <div class="div1">
+     <span  id="out"></span>
+   </div>
+   <br>
+   <br>
+   <br>
+
+<div class="div2">
+
+<span id="result"></span>
+
+</div>
+</fieldset>
+<script type="text/javascript">
+ 
+
+
+function fun(){
+/////
+var wg=document.getElementById("weight").value;
+//document.getElementById("h1").innerHTML=wg;
+////
+var hg=document.getElementById("height").value;
+//document.getElementById("h2").innerHTML=hg;
+/////
+
+    var a=(Number(wg));
+var b=(Number(hg))/(100);
+var cal=a/(b*b);
+var result;
+if(cal<=18.5){
+result="under weight!!";
+}
+else if((cal>18.5)&&(cal<=24.9)){
+    result="healthy weight!";
+}
+else if((cal>=25)&&(cal<=29.9)){
+    result="over weight!";
+}
+else{
+    result="obesity";
+}
+function call(){
+    document.getElementById("out").innerHTML="your BMI is:"+" "  +cal;
+    document.getElementById("result").innerHTML= "you are in :"+result+":condition";
+}
+    btn.addEventListener("click",call);
+
+}
+   // document.write(cal);
+
+
+
+</script>
+</body>
+</html>
